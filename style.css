@@ -31,6 +31,7 @@
 html {
   box-sizing: border-box;
   font-size: var(--font-size-regular);
+  line-height: var(--font-size-regular-line-height);
 }
 
 *,
@@ -85,11 +86,6 @@ video {
   color: var(--color-foreground-100);
 }
 
-html {
-  font-size: var(--font-size-regular);
-  line-height: var(--font-size-regular-line-height);
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -112,26 +108,6 @@ a:hover {
 /* -----------------------------------------------------------------------------
 Section Intro
 ----------------------------------------------------------------------------- */
-.message {
-  grid-column: 1/-1;
-  font-size: 14px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 8px;
-  color: var(--color-foreground-33);
-}
-.message::before {
-  content: "";
-  display: inline-block;
-  height: 8px;
-  width: 8px;
-  background-color: var(--color-accent-100);
-  border-radius: 100vw;
-  -webkit-transform: translateY(60%);
-  -ms-transform: translateY(60%);
-  transform: translateY(60%);
-}
 section#about .options {
   position: relative;
   display: -webkit-box;
@@ -239,7 +215,6 @@ body {
   position: relative;
 }
 
-
 html{   
     background: linear-gradient(135deg, #f7ebec, #ddbdd5, #ac9fbb);
     background-size: 300% 300%;
@@ -256,13 +231,13 @@ body::after {
   display: block;
   position: absolute;
   mix-blend-mode: overlay;
-  opacity: 0.2;
+  opacity: 0.1;
   z-index: -1;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-size: 75%;
+  background-size: 50%;
   background-image: url(https://cdn.prod.website-files.com/5fe0c976e66c08ea4b69df4b/6170060fdefe6c51e288cec5_6092c4b25771ce4e0db2dbf3_noise.gif);
 }
 @keyframes moveGradient {
