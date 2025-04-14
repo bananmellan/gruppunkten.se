@@ -158,10 +158,12 @@ body {
     padding: 1rem;
   }
   main {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 1fr;
+    display: -ms-flex;
+    display: flex;
     justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
     gap: 1rem;
     min-height: 100lvh;
     z-index: 1;
