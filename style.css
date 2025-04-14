@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+:root {
+  --font-family: Inter, sans-serif;
+  --font-weight: 400;
+  --font-style: normal;
+  --font-feature-settings: "liga", "ss02", "ss03", "ss04", "ss06";
+  --font-size-large: clamp(32px, 2.425vw, 82px);
+  --font-size-medium: clamp(26px, 1.425vw, 44px);
+  --font-size-regular: clamp(16px, 0.9vw, 18px);
+  --font-size-regular-line-height: 1.25;
+
+  --color-foreground-100: rgb(32 32 32 / 1);
+  --color-foreground-50: rgb(32 32 32 / 0.5);
+  --color-foreground-33: rgb(32 32 32 / 0.333);
+  --color-foreground-25: rgb(32 32 32 / 0.25);
+  --color-foreground-20: rgb(32 32 32 / 0.2);
+  --color-foreground-15: rgb(32 32 32 / 0.15);
+  --color-foreground-10: rgb(32 32 32 / 0.1);
+  --color-foreground-5: rgb(32 32 32 / 0.05);
+  --color-foreground-0: rgb(32 32 32 / 0);
+  --color-background-100: rgb(238 238 238 / 1);
+  --color-background-0: rgb(238 238 238 / 0);
+  --color-accent-100: rgb(255 199 0 / 1);
+  --color-accent-25: rgb(255 199 0 / 0.25);
+  --color-accent-5: rgb(255 199 0 / 0.05);
+}
+
+/* RESET */
+
+html {
+  box-sizing: border-box;
+  font-size: var(--font-size-regular);
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+/* Typography */
+
+@font-face {
+  font-family: "Tobias";
+  font-weight: 200;
+  src: url("../fonts/Tobias-Light.woff2") format("woff2");
+}
+
+* {
+  font-family: var(--font-family);
+  font-style: var(--font-style);
+  font-weight: var(--font-weight);
+  -webkit-font-feature-settings: var(--font-feature-settings);
+  font-feature-settings: var(--font-feature-settings);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+html {
+  font-size: var(--font-size-regular);
+  line-height: var(--font-size-regular-line-height);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a {
+  color: inherit;
+  border-bottom: 1px solid var(--color-foreground-25);
+}
+a:hover {
+  border-bottom-color: var(--color-foreground-100);
+  cursor: pointer;
+}
+
+/* -----------------------------------------------------------------------------
+Section Intro
+----------------------------------------------------------------------------- */
+.message {
+  grid-column: 1/-1;
+  font-size: 14px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+  color: var(--color-foreground-33);
+}
+.message::before {
+  content: "";
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background-color: var(--color-accent-100);
+  border-radius: 100vw;
+  -webkit-transform: translateY(60%);
+  -ms-transform: translateY(60%);
+  transform: translateY(60%);
+}
+section#about .options {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+section#about .content {
+  -ms-grid-columns: var(--columns-medium);
+  grid-template-columns: var(--columns-medium);
+  gap: calc(var(--grid-gap) / 2);
+  width: 100%;
+}
+section#about .options::-webkit-scrollbar {
+  display: none;
+}
+section#about .options .option {
+  line-height: 20px;
+  padding: 12px 10px;
+  color: var(--color-foreground-33);
+  white-space: nowrap;
+  cursor: pointer;
+}
+section#about .options .option:first-child {
+  padding-left: 0;
+}
+section#about .options .option.is-active {
+  color: var(--color-foreground-100);
+}
+section#about .text {
+  min-height: calc(1em * 0.975 * 11);
+  display: none;
+}
+section#about .text.is-visible {
+  display: block;
+}
+
+/*  */
+body {
+  padding: 1rem;
+}
+main {
+  display: grid;
+  justify-content: center;
+  gap: 1rem;
+}
+section {
+  max-width: 980px;
+}
+#gp_logo {
+  height: 2.25rem;
+}
+
+section p {
+  max-width: 680px;
+}
+footer {
+    margin-top: 2rem;
+    color: var(--color-foreground-33);
+}
+
+section#intro h1 {
+  font-size: var(--font-size-large);
+}
+
+h2 {
+    font-size: var(--font-size-medium);
+    margin-bottom: .25em;
+
+}
+
+@media only screen and (min-width: 980px) {
+nav {
+    margin-bottom: 3rem;
+}
+  }
+@media only screen and (max-width: 980px) {
+  svg path:first-child {
+    display: none;
+  }nav {
+    margin-bottom: 1rem;
+}
+}
