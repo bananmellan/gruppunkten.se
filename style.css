@@ -165,7 +165,7 @@ body {
     align-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-    min-height: 100lvh;
+    min-height: 100dvh;
     z-index: 1;
     position: relative;
   }
@@ -184,7 +184,7 @@ body {
   footer {
     margin-top: 2rem;
   }
-  footer p {
+  footer div {
     color: var(--color-foreground-33);
   }
   section#intro h1 {
