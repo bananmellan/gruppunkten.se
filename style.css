@@ -224,7 +224,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-size: 50%;
+    background-size: clamp(150px,20vw,225px);
     background-image: url(https://cdn.prod.website-files.com/5fe0c976e66c08ea4b69df4b/6170060fdefe6c51e288cec5_6092c4b25771ce4e0db2dbf3_noise.gif);
   }
   
