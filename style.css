@@ -186,6 +186,8 @@ main {
   justify-content: center;
   gap: 1rem;
   min-height: 100lvh;
+  z-index: 1;
+  position: relative;
 }
 section {
   max-width: 980px;
@@ -202,6 +204,8 @@ section p {
 }
 footer {
   margin-top: 2rem;
+}
+footer p {
   color: var(--color-foreground-33);
 }
 
@@ -234,26 +238,36 @@ body {
   height: 100%;
   position: relative;
 }
-#bg-canvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -2;
-  display: block;
-  width: 100%;
-  height: 100%;
-  filter: brightness(1.15);
+
+
+html{   
+    background: linear-gradient(135deg, #f7ebec, #ddbdd5, #ac9fbb);
+    background-size: 300% 300%;
+    animation: moveGradient 16s ease-in-out infinite;
+    filter: brightness(1.25);
+    z-index: -2;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 body::after {
   content: "";
   display: block;
   position: absolute;
   mix-blend-mode: overlay;
-  opacity: 0.08;
+  opacity: 0.2;
   z-index: -1;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  background-size: 75%;
   background-image: url(https://cdn.prod.website-files.com/5fe0c976e66c08ea4b69df4b/6170060fdefe6c51e288cec5_6092c4b25771ce4e0db2dbf3_noise.gif);
 }
+@keyframes moveGradient {
+    0% { background-position: 0% 50%; }
+    33% { background-position: 100% 50%; }
+    66% { background-position: 100% 100%; }
+    100% { background-position: 0% 50%; }
+  }
