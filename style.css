@@ -10,15 +10,15 @@
   --font-size-regular: clamp(16px, 0.9vw, 18px);
   --font-size-regular-line-height: 1.25;
 
-  --color-foreground-100: rgb(32 32 32 / 1);
-  --color-foreground-50: rgb(32 32 32 / 0.5);
-  --color-foreground-33: rgb(32 32 32 / 0.333);
-  --color-foreground-25: rgb(32 32 32 / 0.25);
-  --color-foreground-20: rgb(32 32 32 / 0.2);
-  --color-foreground-15: rgb(32 32 32 / 0.15);
-  --color-foreground-10: rgb(32 32 32 / 0.1);
-  --color-foreground-5: rgb(32 32 32 / 0.05);
-  --color-foreground-0: rgb(32 32 32 / 0);
+  --color-foreground-100: rgb(11 2 75 / 1);
+  --color-foreground-50: rgb(11 2 75 / 0.5);
+  --color-foreground-33: rgb(11 2 75 / 0.333);
+  --color-foreground-25: rgb(11 2 75 / 0.25);
+  --color-foreground-20: rgb(11 2 75 / 0.2);
+  --color-foreground-15: rgb(11 2 75 / 0.15);
+  --color-foreground-10: rgb(11 2 75 / 0.1);
+  --color-foreground-5: rgb(11 2 75 / 0.05);
+  --color-foreground-0: rgb(11 2 75 / 0);
   --color-background-100: rgb(238 238 238 / 1);
   --color-background-0: rgb(238 238 238 / 0);
   --color-accent-100: rgb(255 199 0 / 1);
@@ -82,6 +82,7 @@ video {
   font-feature-settings: var(--font-feature-settings);
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
+  color: var(--color-foreground-100);
 }
 
 html {
@@ -178,12 +179,16 @@ main {
   display: grid;
   justify-content: center;
   gap: 1rem;
+  min-height: 100lvh;
 }
 section {
   max-width: 980px;
 }
 #gp_logo {
   height: 2.25rem;
+}
+svg path {
+    fill: var(--color-foreground-100);
 }
 
 section p {
@@ -216,3 +221,34 @@ nav {
     margin-bottom: 1rem;
 }
 }
+
+
+body {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+#bg-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  body::after {
+    content: "";
+    display: block;
+    position: fixed;
+    mix-blend-mode: overlay;
+    opacity: .1;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(1px);
+    background-image: url(https://cdn.prod.website-files.com/5fe0c976e66c08ea4b69df4b/6170060fdefe6c51e288cec5_6092c4b25771ce4e0db2dbf3_noise.gif);
+  }
